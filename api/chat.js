@@ -4,7 +4,7 @@ const { answerFAQ } = require("../lib/faq.cjs");
 const { findOrder } = require("../lib/orders.cjs");
 
 async function grokFallback(prompt) {
-  const key = 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;
+  const key = "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";
   if (!key) return "I’m not fully sure. Let me connect you to a human agent.";
 
   try {
