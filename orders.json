@@ -1,0 +1,29 @@
+[
+  {
+    "orderId": "12345",
+    "email": "alex@example.com",
+    "phone": "9876543210",
+    "status": "Out for delivery",
+    "eta": "Today, 6\u20138 PM",
+    "refund": {
+      "status": "Not applicable"
+    },
+    "return": {
+      "eligibleUntil": "2025-12-05"
+    }
+  },
+  {
+    "orderId": "98765",
+    "email": "ria@example.com",
+    "phone": "9876500000",
+    "status": "Delivered",
+    "eta": "Delivered on 2025-11-20",
+    "refund": {
+      "status": "Initiated",
+      "date": "2025-11-21"
+    },
+    "return": {
+      "eligibleUntil": "2025-11-28"
+    }
+  }
+]
