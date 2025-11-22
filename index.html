@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Addiekart — Support Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root{
+        --brand:#1F6BFF; /* Addiekart blue */
+        --bg:#F6F8FB;
+        --text:#1F2937;
+        --muted:#64748B;
+        --card:#FFFFFF;
+        --accent:#10B981;
+        --warn:#F59E0B;
+      }
+      *{box-sizing:border-box}
+      body{font-family:Inter,system-ui,Arial;margin:0;background:var(--bg);color:var(--text)}
+      .nav{background:var(--brand);color:white;padding:14px 20px;display:flex;align-items:center;gap:12px}
+      .logo{width:28px;height:28px;border-radius:6px;background:white;display:inline-flex;align-items:center;justify-content:center;color:var(--brand);font-weight:800}
+      .wrap{max-width:1000px;margin:22px auto;padding:0 16px}
+      .hero{display:flex;justify-content:space-between;align-items:center;margin:8px 0 18px 0}
+      .hero h1{margin:6px 0 0 0;font-size:24px}
+      .hero p{margin:2px 0;color:var(--muted)}
+      .grid{display:grid;grid-template-columns:1fr 380px;gap:16px}
+      .panel{background:var(--card);border:1px solid #E5E7EB;border-radius:14px;padding:14px}
+      .inputs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+      input,button{padding:10px 12px;border:1px solid #E5E7EB;border-radius:10px}
+      button{background:var(--brand);color:#fff;border:none;cursor:pointer}
+      .chat{border:1px solid #E5E7EB;border-radius:12px;padding:12px;min-height:340px;display:flex;flex-direction:column;gap:10px;background:#fff}
+      .u{align-self:flex-end;background:var(--brand);color:#fff;padding:10px 14px;border-radius:12px;max-width:70%}
+      .b{align-self:flex-start;background:#F3F6FC;color:#111827;padding:10px 14px;border-radius:12px;max-width:70%}
+      .botcard{background:#F8FAFF;border:1px dashed #D1D5DB;border-radius:12px;padding:10px}
+      .row{display:flex;gap:8px}
+      .timeline{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+      .step{display:flex;align-items:center;gap:8px}
+      .dot{width:10px;height:10px;border-radius:50%;background:#D1D5DB}
+      .dot.active{background:var(--accent)}
+      .csat{display:flex;gap:10px;align-items:center;margin-top:8px}
+      .csat button{background:#E5E7EB;color:#111827;border:1px solid #D1D5DB}
+      .csat button.selected{border-color:var(--accent)}
+      .side{display:flex;flex-direction:column;gap:10px}
+      .badge{display:inline-flex;align-items:center;gap:8px;background:#EEF2FF;color:#1E40AF;border:1px solid #CBD5E1;border-radius:10px;padding:8px 10px;font-size:12px}
+      .muted{color:var(--muted);font-size:12px}
+      .cta-esc{background:#111827;color:#fff}
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo">A</div>
+      <strong>Addiekart</strong>
+      <span class="muted" style="margin-left:8px;">Support</span>
+    </div>
+
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <h1>Addiekart Support Chatbot</h1>
+          <p>Grounded answers with order lookup, policy FAQ, Grok fallback, CSAT & escalation.</p>
+        </div>
+        <div class="badge">Prototype • Wireframe-Style UI</div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <div class="inputs">
+            <input id="oid" placeholder="Order ID (e.g., 12345)" />
+            <input id="em" placeholder="Email (e.g., alex@example.com)" />
+            <input id="ph" placeholder="Phone (e.g., 9876543210)" />
+          </div>
+
+          <div id="chat" class="chat">
+            <div class="b">Hi! I’m the Addiekart assistant. Try: “Where is my order 12345?” or ask about refunds/returns.</div>
+          </div>
+
+          <div class="row" style="margin-top:10px">
+            <input id="msg" placeholder="Type your question…" style="flex:1" />
+            <button id="send">Send</button>
+          </div>
+          <p class="muted" style="margin-top:6px">Tip: include Order ID or your email/phone to fetch your order automatically.</p>
+        </div>
+
+        <div class="side">
+          <div class="panel">
+            <strong>Quick Actions</strong>
+            <div class="row" style="margin-top:10px">
+              <button onclick="prefill('Where is my order 12345?')">Track order</button>
+              <button onclick="prefill('Refund status for order 98765')">Refund status</button>
+              <button onclick="prefill('What is the return policy?')">Return policy</button>
+            </div>
+          </div>
+          <div class="panel">
+            <strong>About</strong>
+            <p class="muted">This is a demo prototype of Addiekart’s GPT-style support assistant. It uses Grok (xAI) for fallback answers and a rule engine for orders & policies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
